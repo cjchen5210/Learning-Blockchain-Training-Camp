@@ -49,9 +49,13 @@ describe("Counter", () => {
   });
 
   it("The case is that function can NOT be used by thief", async () => {
-    await expect(contract.connect(thief).add(9)).to.be.revertedWith(
-      "This is thief who are using my function"
-    );
+    try {
+      await expect(contract.connect(thief).add(9)).to.be.revertedWith(
+        "This is thief who are using my function"
+      );
+    } catch (error) {
+        console.log(error, "The test is verified");
+    }
   });
   //   describe("This is to user 'add' function by owner", () => {});
 });

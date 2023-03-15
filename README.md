@@ -32,3 +32,8 @@ Successfully!
 
 ### 自动版本
 在deploy文件夹下
+
+## Week2 Bank Contract
+### 通过MetaMask向Bank转账ETH
+### Bank合约记录每个地址转账金额
+### 编写withdraw，取出ETH

@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/Bank.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n// 1. Pragma\npragma solidity ^0.8.7;\n\n// 2. Imports\n// import \"@openzeppelin/contracts/utils/math/SafeMath.sol\";\n// import \"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\";\n// import \"./PriceConverter.sol\";\n// using SafeMath for uint256;\n// 3. Interfaces, Libraries, Contracts\n// error FundMe__NotOwner();\n\n/**@title The Bank is built by me !!!\n * @author CJJJJJJJ\n * @notice just take it easy\n * @dev for sure\n */\ncontract Bank {\n    address private immutable i_owner;\n    address[] private s_funders;\n    mapping(address => uint256) private s_addressToAmountDeposit;\n    uint256 public constant MINIMUM_GAS = 50 * 10**8;\n    constructor() {\n        i_owner = msg.sender;\n    }\n\n    // modifier onlyOwner {\n    //     if (msg.sender != i_owner) revert Bank__NotOwner();\n    //     _;\n    // }\n    event LogFunding(address sender, uint amount);\n\n    function fund() public payable {\n        // > 0.01 ether\n        require(msg.value > 0, \"Deposit amount must be greater than 0\");\n        require(msg.value >= MINIMUM_GAS, \"Gas Limit, man ~\");\n        s_addressToAmountDeposit[msg.sender] += msg.value;\n        s_funders.push(msg.sender);\n        emit LogFunding(msg.sender, msg.value);\n    }\n\n    function withdraw() public {\n        uint256 withdrawAmount = s_addressToAmountDeposit[msg.sender];\n\n        (bool success, ) = msg.sender.call{value: withdrawAmount}(new bytes(0));\n        s_addressToAmountDeposit[msg.sender] = 0;\n        require(success, \"Withdrawal failed\");\n    }\n\n    function getOwner() public view returns (address) {\n        return i_owner;\n    }\n\n    \n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

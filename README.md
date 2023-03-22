@@ -34,6 +34,8 @@ Successfully!
 在deploy文件夹下
 
 ## Week2 Bank Contract
+编写，部署合约到测试网，合约功能为存款，取款。<br>
+前端使用ethers <br>
 通过vercel部署前端，地址 -> https://my-bank-website.vercel.app/
 ### 合约地址
 合约地址 -> https://goerli.etherscan.io/address/0xe86cc5f5f90300d4b93cf8e06239a45f3a327bb6

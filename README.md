@@ -41,7 +41,7 @@ Successfully!
 
 ### code repo
 合约 -> https://github.com/cjchen5210/Learning-Blockchain-Training-Camp/tree/main/week2-bank
-前端 -> https://github.com/cjchen5210/my-bank-website
+<br>前端 -> https://github.com/cjchen5210/my-bank-website
 ### 页面截图
 ![image](https://user-images.githubusercontent.com/56478943/226847982-c12a918a-470d-4238-8624-d625005e1b2d.png)
 

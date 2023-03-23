@@ -69,7 +69,7 @@ the code is in repo -> week2-2
 ## week3 - 1 - 1 - 1 发⾏⼀个 ERC20 Token（⽤⾃⼰的名字）， 发⾏ 100000 token
 ## week3 - 1 - 1 - 2 编写⼀个⾦库 Vault 合约
 
-• 编写 deposite ⽅法，实现 ERC20 存⼊ Vault，并记录每个⽤户存款⾦额（approve/transferFrom）
+• 编写 deposit ⽅法，实现 ERC20 存⼊ Vault，并记录每个⽤户存款⾦额（approve/transferFrom）
 • 编写 withdraw ⽅法，提取⽤户⾃⼰的存款
 ## week3 - 1 - 1 - 3 使⽤ ERC2612 标准 Token ， 使⽤签名的⽅式 deposite
 

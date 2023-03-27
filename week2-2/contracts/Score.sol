@@ -8,12 +8,14 @@ contract Score {
     address public teacher;
 
     error NotTeacher();
+    error ScoreOver();
 
     constructor() {
         owner = msg.sender;
     }
 
     function setTeacher(address tc) public {
+        if (score > 100) revert ScoreOver();
         teacher = tc;
     }
 

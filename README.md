@@ -34,6 +34,47 @@ Successfully!
 在deploy文件夹下
 
 ## Week2 Bank Contract
+编写，部署合约到测试网，合约功能为存款，取款。<br>
+前端使用ethers <br>
+通过vercel部署前端，地址 -> https://my-bank-website.vercel.app/
+### 合约地址
+合约地址 -> https://goerli.etherscan.io/address/0xe86cc5f5f90300d4b93cf8e06239a45f3a327bb6
+![image](https://user-images.githubusercontent.com/56478943/226849136-b08e41e2-b45c-4aef-8990-f435c15bd967.png)
+
+### code repo
+合约 -> https://github.com/cjchen5210/Learning-Blockchain-Training-Camp/tree/main/week2-bank
+<br>前端 -> https://github.com/cjchen5210/my-bank-website
+### 页面截图
+![image](https://user-images.githubusercontent.com/56478943/226847982-c12a918a-470d-4238-8624-d625005e1b2d.png)
+
+### 链接钱包
+![image](https://user-images.githubusercontent.com/56478943/226849598-e5cbe120-34d8-4b89-b683-064fe4531b0c.png)
+
 ### 通过MetaMask向Bank转账ETH
+![image](https://user-images.githubusercontent.com/56478943/226849862-14bdfd88-518f-4d6f-a23a-2e16b563e7c1.png)
+![image](https://user-images.githubusercontent.com/56478943/226850291-cd784ecc-58bf-4c10-95e4-342def9be2b6.png)
+![image](https://user-images.githubusercontent.com/56478943/226850359-87949f7a-af32-4bbf-9f35-f4d615a8d308.png)
+
 ### Bank合约记录每个地址转账金额
+![image](https://user-images.githubusercontent.com/56478943/226850399-e9a95768-242d-4a92-8a47-c5b1dd1df978.png)
+
 ### 编写withdraw，取出ETH
+![image](https://user-images.githubusercontent.com/56478943/226850475-d1ef519f-f8ca-4a2a-964b-44ed32f59c0a.png)
+![image](https://user-images.githubusercontent.com/56478943/226850779-1712d7b6-a605-48b2-b3e1-fb336cb6518f.png)
+![image](https://user-images.githubusercontent.com/56478943/226850879-4f69fb44-c4f9-4aa6-86d6-d7444f3ddba0.png)
+
+## week2 Score & Teacher
+the code is in repo -> week2-2
+
+## week3 - 1 - 1 - 1 发⾏⼀个 ERC20 Token（⽤⾃⼰的名字）， 发⾏ 100000 token
+## week3 - 1 - 1 - 2 编写⼀个⾦库 Vault 合约
+
+• 编写 deposit ⽅法，实现 ERC20 存⼊ Vault，并记录每个⽤户存款⾦额（approve/transferFrom）<br>
+• 编写 withdraw ⽅法，提取⽤户⾃⼰的存款
+## week3 - 1 - 1 - 3 使⽤ ERC2612 标准 Token ， 使⽤签名的⽅式 deposit
+
+## week3 - 1 - 2 - 1 发⾏⼀个 ERC721 Token（⽤⾃⼰的名字）
+• 铸造 ⼀个 NFT，在测试⽹上发⾏，在 Opensea 上查看
+## week3 - 1 - 2 - 2 编写⼀个合约：使⽤⾃⼰发⾏的ERC20 Token 来买卖NFT：
+• NFT 持有者可上架 NFT（list 设置价格 多少个 TOKEN 购买 NFT ）
+• 编写购买NFT ⽅法，转⼊对应的TOKEN，获取对应的 NFT 

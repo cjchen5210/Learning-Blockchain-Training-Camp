@@ -4,30 +4,45 @@ pragma solidity ^0.8.7;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
+
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Address.sol";
+
+
 /**@title Publish Token and make a bank
  * @author CJJJJJJJ
  * @notice just take it easy
  * @dev for sure
  */
 
-contract Vault is ERC20 {
-    mapping(address => uint256) vault;
+interface TokenRecipient {
+    function tokensReceived(
+        address sender,
+        uint amount
+    ) external returns (bool);
+}
 
-    constructor() ERC20("CJ", "Bingo") {
-        _mint(msg.sender, 100000 * 10**18);
+contract CJToken is ERC20, Ownable {
+    using Address for address;
+
+    constructor() ERC20("CJ", "Token") onlyOwner {
+        _mint(msg.sender, 10000 * 10 ** 18);
     }
 
-    function deposite(uint256 amount) public {
-        approve(msg.sender, amount);
-        transferFrom(msg.sender, address(this), amount);
-        vault[msg.sender] += amount;
-    }
+    function transferWithCallback(
+        address recipient,
+        uint256 amount
+    ) external returns (bool) {
+        _transfer(msg.sender, recipient, amount);
 
-    function withdraw() public {
-        uint256 amount = vault[msg.sender];
-        require(amount > 0, "Vault: cannot withdraw zero balance");
-        vault[msg.sender] = 0;
-
-        _transfer(address(this), msg.sender, amount);
+        if (recipient.isContract()) {
+            bool rv = TokenRecipient(recipient).tokensReceived(
+                msg.sender,
+                amount
+            );
+            require(rv, "No Recipient");
+            return rv;
+        }
     }
 }

@@ -78,3 +78,17 @@ the code is in repo -> week2-2
 ## week3 - 1 - 2 - 2 编写⼀个合约：使⽤⾃⼰发⾏的ERC20 Token 来买卖NFT：
 • NFT 持有者可上架 NFT（list 设置价格 多少个 TOKEN 购买 NFT ）
 • 编写购买NFT ⽅法，转⼊对应的TOKEN，获取对应的 NFT 
+
+## week3 - 2 部署一个可以升级的ERC-20合约
+• 第二个升级版加入 function transferWithCallback(address recipient, uint256
+amount) external returns (bool)
+## week4 - 1 - 1编写合约，前端交互
+• 两种方式 存款 1. approve 2. deposit
+• ERC2612 permit -> permitDeposit
+• 显示余额
+• 用户withdraw
+## week4 - 1 - 2 发行ERC-721
+• 使用ether.js 解析ERC-721转账事件
+• 记录到数据库中，方便查询用户持有的所有NFT
+## week4 - 2 索引数据
+• 看起来蛮有意思的

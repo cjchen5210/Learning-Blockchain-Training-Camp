@@ -6,9 +6,10 @@ async function main() {
     await CJtoken.deployed()
     
     console.log(`the cj token address is ${CJtoken.address}`)
+    console.log(`the deployer is ${CJtoken.signer}`)
 }
 
-main().catch((erorr) => {
+main().catch((error) => {
     console.log(error, "No! there is an erorr")
     process.exitCode = 1
 })

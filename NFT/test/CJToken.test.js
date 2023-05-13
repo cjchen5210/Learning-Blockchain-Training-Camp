@@ -7,5 +7,5 @@ describe("Test CJToken", () => {
         const contract = await TokenContract.deploy();
         await contract.deployed();
     });
-
+    // it("the case is to ")
 })
